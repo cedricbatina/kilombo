@@ -1,0 +1,22 @@
+[
+  {
+    "theme": "clair",
+    "couleurs": {
+      "texte": "#333333",
+      "fond": "#ffffff",
+      "lien": "#007bff",
+      "bouton": "#007bff",
+      "bouton_texte": "#ffffff"
+    }
+  },
+  {
+    "theme": "sombre",
+    "couleurs": {
+      "texte": "#ffffff",
+      "fond": "#333333",
+      "lien": "#4caf50",
+      "bouton": "#4caf50",
+      "bouton_texte": "#ffffff"
+    }
+  }
+]

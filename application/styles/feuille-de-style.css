@@ -1,0 +1,20 @@
+.logo.nav-brand {
+ max-width: 150px;
+ max-height: 150px;
+  transition: transform 500ms ease-in;
+  transform-origin: initial;
+}
+.logo:hover {
+  text-align: center;
+  transform: scale(1.1);
+}
+.creation_date {
+ color: #888888;
+ font-style: italic;
+ font-weight: 400;
+}
+
+.texte_date {
+ color: #090909;
+ font-weight: 300;
+}
