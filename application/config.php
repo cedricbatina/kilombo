@@ -15,9 +15,10 @@ function get_default_connection()
 {
  return array(
   "cx_server" => MYSQL_HOST,
-  "cx_dbname" => MYSQL_NAME,
   "cx_login" => MYSQL_USER,
-  "cx_password" => MYSQL_PASSWORD
+  "cx_password" => MYSQL_PASSWORD,
+  "cx_dbname" => MYSQL_NAME
+
  );
 }
 

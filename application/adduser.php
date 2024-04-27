@@ -4,11 +4,11 @@ require_once './services/UserServices.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  // Récupérer les données du formulaire
- $name = $_POST["name"];
- $username = $_POST["username"];
- $pwd = $_POST["password"];
- $email = $_POST["email"];
- $creation_date = $_POST["creation_date"];
+ $name = $_POST['name'];
+ $username = $_POST['username'];
+ $password = $_POST['password'];
+ $email = $_POST['email'];
+ $creation_date = $_POST['creation_date'];
 
  // Créer une instance de l'entité utilisateur
  $user = new UserEntity();
@@ -17,17 +17,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  $user->name = $name;
  $user->username = $username;
  $user->email = $email;
- $user->password = $pwd;
+ $user->password = $password;
  $user->creation_date = $creation_date;
 
  $service = new UserService();
  $service->adduser($user);
 }
-
-
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
  <meta charset="UTF-8">
@@ -40,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
  <?php require_once "views/_layout.php"; ?>
-
  <form action="adduser.php" method="POST">
   <input type="hidden" id="id">
   <div class="container-fluid">
@@ -52,21 +49,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      <table>
       <tr>
        <td>Nom:</td>
-       <td><input type="text" id="name"></td>
+       <td><input type="text" id="name" name="name"></td>
       </tr>
       <tr>
        <td>Pseudo:</td>
-       <td><input type="text" id="username"></td>
+       <td><input type="text" id="username" name="username"></td>
       </tr>
       <tr>
        <td>Email:</td>
-       <td><input type="text" id="email"></td>
+       <td><input type="email" id="email" name="email"></td>
       </tr>
       <tr>
        <td>Mot de passe:</td>
-       <td><input type="text" id="password"></td>
+       <td><input type="password" id="password" name="password"></td>
       </tr>
-
+      <tr>
+       <td>Date de création:</td>
+       <td><input type="date" id="creation_date" name="creation_date"></td>
+      </tr>
      </table>
     </div>
    </div>
@@ -74,8 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="col"><input type="submit" value="Ajouter" id="cmd_adduser"></div>
    </div>
   </div>
-
  </form>
+
 </body>
 
 </html>
