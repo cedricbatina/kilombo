@@ -1,6 +1,6 @@
 <?php
-require_once './models/UserEntity.php';
-require_once './services/UserServices.php';
+require_once 'UserEntity.php';
+require_once 'UserServices.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  // Récupérer les données du formulaire
@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  $username = $_POST['username'];
  $password = $_POST['password'];
  $email = $_POST['email'];
- $creation_date = $_POST['creation_date'];
+ //$creation_date = $_POST['creation_date'];
 
  // Créer une instance de l'entité utilisateur
  $user = new UserEntity();
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  $user->username = $username;
  $user->email = $email;
  $user->password = $password;
- $user->creation_date = $creation_date;
+ //$user->creation_date = $creation_date;
 
  $service = new UserService();
  $service->adduser($user);
@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
  <!-- Include the Font Awesome CSS file -->
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <link rel="stylesheet" href="./styles/feuille-de-style.css">
  <title>Document</title>
 </head>
 
@@ -40,42 +41,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
  <?php require_once "views/_layout.php"; ?>
  <form action="adduser.php" method="POST">
   <input type="hidden" id="id">
-  <div class="container-fluid">
-   <div>
-    Ajout d'un utilisateur
-   </div>
-   <div class="row">
-    <div class="col">
-     <table>
-      <tr>
-       <td>Nom:</td>
-       <td><input type="text" id="name" name="name"></td>
-      </tr>
-      <tr>
-       <td>Pseudo:</td>
-       <td><input type="text" id="username" name="username"></td>
-      </tr>
-      <tr>
-       <td>Email:</td>
-       <td><input type="email" id="email" name="email"></td>
-      </tr>
-      <tr>
-       <td>Mot de passe:</td>
-       <td><input type="password" id="password" name="password"></td>
-      </tr>
-      <tr>
-       <td>Date de création:</td>
-       <td><input type="date" id="creation_date" name="creation_date"></td>
-      </tr>
-     </table>
+  <div class="container mt-5">
+   <h2 class="text-center mb-4">Ajout d'un utilisateur</h2>
+   <div class="row justify-content-center">
+    <div class="col-md-8">
+     <div class="mb-3 row">
+      <label for="name" class="col-sm-2 col-form-label">Nom:</label>
+      <div class="col-sm-10">
+       <input type="text" class="form-control" id="name" name="name">
+      </div>
+     </div>
+     <div class="mb-3 row">
+      <label for="username" class="col-sm-2 col-form-label">Pseudo:</label>
+      <div class="col-sm-10">
+       <input type="text" class="form-control" id="username" name="username">
+      </div>
+     </div>
+     <div class="mb-3 row">
+      <label for="email" class="col-sm-2 col-form-label">Email:</label>
+      <div class="col-sm-10">
+       <input type="email" class="form-control" id="email" name="email">
+      </div>
+     </div>
+     <div class="mb-3 row">
+      <label for="password" class="col-sm-2 col-form-label">Mot de passe:</label>
+      <div class="col-sm-10">
+       <input type="password" class="form-control" id="password" name="password">
+      </div>
+     </div>
+     <div class="mb-3 row">
+      <div class="col-sm-10 offset-sm-2">
+       <input type="submit" class="btn btn-primary" value="Ajouter" id="cmd_adduser">
+      </div>
+     </div>
     </div>
-   </div>
-   <div class="row">
-    <div class="col"><input type="submit" value="Ajouter" id="cmd_adduser"></div>
    </div>
   </div>
  </form>
 
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

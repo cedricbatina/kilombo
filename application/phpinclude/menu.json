@@ -1,6 +1,6 @@
 [
  {"route":"#", "label":"Accueil", "tag":"", "icon": "<i class=\"fa-solid fa-house\"></i>"},
- {"route":"#", "label":"Utilisateurs", "tag":"", "icon": "<i class=\"fa-regular fa-user\"></i>"},
+ {"route":"utilisateurs.php", "label":"Utilisateurs", "tag":"", "icon": "<i class=\"fa-regular fa-user\"></i>"},
  {"route":"#", "label":"Demandes", "tag":"", "icon": "<i class=\"fa-solid fa-users-viewfinder\"></i>"},
  {"route":"#", "label":"Agenda", "tag":"", "icon": "<i class=\"fa-regular fa-calendar\"></i>"},
  {"route":"#", "label":"T&acirc;ches", "tag":"", "icon": "<i class=\"fa-solid fa-code\"></i>"},
